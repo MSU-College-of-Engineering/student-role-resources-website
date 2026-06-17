@@ -42,21 +42,21 @@ public/previews/       # component preview images
 All links are sourced directly from the hyperlinks embedded in the master documentation PDF.
 To add or edit a resource, update [`src/data/resources.js`](src/data/resources.js).
 
-## Content sources
+## Key links & content sources
 
-The original source documents are linked from the site itself:
+The Resources hero links straight to the two MSU Engineering sites:
+
+- **Live site** → <https://engineering.msu.edu/>
+- **Dev site** → <https://engineering.wwwdev.egr.msu.edu/>
+
+The original source documents are also linked from the site itself:
 
 - **Resources** page → hero button + footer link → `master-documentation.pdf`
 - **Components** page → header button + footer link → `drupal-user-guide.pdf`
 
-So they ship with the build, the PDFs live in `public/content-source/` (Vite only
-serves/bundles assets from `public/`). The editable originals are kept in the
-top-level `content-source/` folder; if you replace them, copy the new versions
-into `public/content-source/` (same filenames) so the site picks them up:
-
-```bash
-cp content-source/*.pdf public/content-source/
-```
+The PDFs live in `public/content-source/` (Vite only serves/bundles assets from
+`public/`), so they ship with the build. To update a source document, replace the
+matching file in `public/content-source/` (keeping the same filename).
 
 ## Develop
 

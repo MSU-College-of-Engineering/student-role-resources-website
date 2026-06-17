@@ -522,6 +522,61 @@ svg {
   gap: 10px;
   margin-top: 24px;
 }
+
+/* Prominent links to the live & dev MSU Engineering sites */
+.site-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+  font-family: var(--font);
+  font-size: 13px;
+  line-height: 1.2;
+  padding: 11px 18px;
+  border-radius: var(--r-full);
+  border: 1.5px solid transparent;
+  transition:
+    background 0.13s,
+    border-color 0.13s,
+    color 0.13s,
+    box-shadow 0.13s,
+    transform 0.13s;
+}
+.site-btn-label {
+  font-weight: 700;
+}
+.site-btn-url {
+  opacity: 0.72;
+  font-size: 12.5px;
+}
+.site-btn-ext {
+  margin-left: 2px;
+}
+.site-btn--primary {
+  background: #fff;
+  border-color: #fff;
+  color: var(--green);
+}
+.site-btn--primary:hover {
+  background: #eef4f1;
+  border-color: #eef4f1;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+.site-btn--ghost {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+.site-btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.55);
+  transform: translateY(-1px);
+}
+.site-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
 .source-link {
   display: inline-flex;
   align-items: center;

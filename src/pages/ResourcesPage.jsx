@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { resources, catLabels, catOrder, statusLabels } from '../data/resources'
-import { icons, ArrowIcon, CloseIcon, ExternalIcon, DocIcon, EmptyIcon } from '../icons'
+import { icons, ArrowIcon, CloseIcon, ExternalIcon, DocIcon, GlobeIcon, EmptyIcon } from '../icons'
 import SiteHeader from '../components/SiteHeader'
 
 const SOURCE_PDF = `${import.meta.env.BASE_URL}content-source/master-documentation.pdf`
@@ -231,6 +231,32 @@ export default function ResourcesPage() {
               </div>
             </div>
             <div className="hero-actions">
+              <a
+                className="site-btn site-btn--primary"
+                href="https://engineering.msu.edu/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GlobeIcon />
+                <span className="site-btn-label">Live site</span>
+                <span className="site-btn-url">engineering.msu.edu</span>
+                <span className="site-btn-ext" aria-hidden="true">
+                  <ExternalIcon />
+                </span>
+              </a>
+              <a
+                className="site-btn site-btn--ghost"
+                href="https://engineering.wwwdev.egr.msu.edu/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GlobeIcon />
+                <span className="site-btn-label">Dev site</span>
+                <span className="site-btn-url">engineering.wwwdev.egr.msu.edu</span>
+                <span className="site-btn-ext" aria-hidden="true">
+                  <ExternalIcon />
+                </span>
+              </a>
               <a
                 className="source-link source-link--on-dark"
                 href={SOURCE_PDF}
