@@ -49,5 +49,23 @@ npm install
 npm run dev      # local dev server
 npm run build    # production build → dist/
 npm run preview  # preview the production build
-npm run deploy   # build + publish dist/ to GitHub Pages
+npm run deploy   # build + publish dist/ to the gh-pages branch
 ```
+
+## Deploy to GitHub Pages
+
+`npm run deploy` builds the site and pushes `dist/` to a `gh-pages` branch on
+`origin` (via the [`gh-pages`](https://www.npmjs.com/package/gh-pages) package),
+adding a `.nojekyll` file so Pages serves the build as-is.
+
+One-time setup, in the repo's **Settings → Pages**: set the source to
+**Deploy from a branch → `gh-pages` / `root`**. After that, every `npm run deploy`
+publishes to:
+
+```
+https://msu-college-of-engineering.github.io/student-role-resources-website/
+```
+
+The Vite `base` is set to `'./'` (relative), so the build works at that subpath
+without hardcoding the repo name, and hash-based routing (`#/`, `#/components`)
+needs no extra server config.
