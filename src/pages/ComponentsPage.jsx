@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
 import { components, catLabels, catOrder } from '../data/components'
-import { icons, ArrowIcon, CloseIcon, EmptyIcon } from '../icons'
+import { icons, ArrowIcon, CloseIcon, ExternalIcon, DocIcon, EmptyIcon } from '../icons'
 import SiteHeader from '../components/SiteHeader'
+
+const SOURCE_PDF = `${import.meta.env.BASE_URL}content-source/drupal-user-guide.pdf`
 
 const catColors = {
   content: '#077A56',
@@ -196,6 +198,20 @@ export default function ComponentsPage() {
                   : `${components.length} components across ${catOrder.length} categories`}
               </p>
             </div>
+            <div className="main-header-right">
+              <a
+                className="source-link"
+                href={SOURCE_PDF}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <DocIcon />
+                <span>View source guide (PDF)</span>
+                <span className="source-link-ext" aria-hidden="true">
+                  <ExternalIcon />
+                </span>
+              </a>
+            </div>
           </div>
 
           <div className="filter-pills" role="group" aria-label="Filter by category">
@@ -278,7 +294,13 @@ export default function ComponentsPage() {
         <span>
           <strong>EGR Component Reference</strong> · MSU College of Engineering
         </span>
-        <span>Drupal CMS component build guide.</span>
+        <span>
+          Drupal CMS component build guide. Source:{' '}
+          <a href={SOURCE_PDF} target="_blank" rel="noopener noreferrer">
+            Drupal User Guide (PDF)
+          </a>
+          .
+        </span>
       </footer>
 
       {activeComp && <ComponentDetailPanel comp={activeComp} onClose={() => setActiveComp(null)} />}

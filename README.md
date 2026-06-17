@@ -42,6 +42,22 @@ public/previews/       # component preview images
 All links are sourced directly from the hyperlinks embedded in the master documentation PDF.
 To add or edit a resource, update [`src/data/resources.js`](src/data/resources.js).
 
+## Content sources
+
+The original source documents are linked from the site itself:
+
+- **Resources** page → hero button + footer link → `master-documentation.pdf`
+- **Components** page → header button + footer link → `drupal-user-guide.pdf`
+
+So they ship with the build, the PDFs live in `public/content-source/` (Vite only
+serves/bundles assets from `public/`). The editable originals are kept in the
+top-level `content-source/` folder; if you replace them, copy the new versions
+into `public/content-source/` (same filenames) so the site picks them up:
+
+```bash
+cp content-source/*.pdf public/content-source/
+```
+
 ## Develop
 
 ```bash

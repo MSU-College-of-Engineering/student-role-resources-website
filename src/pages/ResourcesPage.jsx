@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
 import { resources, catLabels, catOrder, statusLabels } from '../data/resources'
-import { icons, ArrowIcon, CloseIcon, ExternalIcon, EmptyIcon } from '../icons'
+import { icons, ArrowIcon, CloseIcon, ExternalIcon, DocIcon, EmptyIcon } from '../icons'
 import SiteHeader from '../components/SiteHeader'
+
+const SOURCE_PDF = `${import.meta.env.BASE_URL}content-source/master-documentation.pdf`
 
 const catColors = {
   tools: '#077A56',
@@ -228,6 +230,20 @@ export default function ResourcesPage() {
                 <div className="hero-stat-label">Direct links</div>
               </div>
             </div>
+            <div className="hero-actions">
+              <a
+                className="source-link source-link--on-dark"
+                href={SOURCE_PDF}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <DocIcon />
+                <span>View source documentation (PDF)</span>
+                <span className="source-link-ext" aria-hidden="true">
+                  <ExternalIcon />
+                </span>
+              </a>
+            </div>
           </section>
 
           <div className="main-header">
@@ -332,7 +348,13 @@ export default function ResourcesPage() {
         <span>
           <strong>EGR Web Resources</strong> · MSU College of Engineering
         </span>
-        <span>Compiled from the Master Documentation for the Student Front-End Web Assistant.</span>
+        <span>
+          Compiled from the{' '}
+          <a href={SOURCE_PDF} target="_blank" rel="noopener noreferrer">
+            Master Documentation
+          </a>{' '}
+          for the Student Front-End Web Assistant.
+        </span>
       </footer>
 
       {activeRes && <ResourceDetailPanel res={activeRes} onClose={() => setActiveRes(null)} />}

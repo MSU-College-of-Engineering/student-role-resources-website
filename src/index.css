@@ -515,6 +515,71 @@ svg {
   letter-spacing: 0.02em;
 }
 
+/* ── Hero actions ─────────────────────────────────── */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+.source-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 16px;
+  border-radius: var(--r-full);
+  border: 1.5px solid var(--border-mid);
+  background: var(--surface);
+  color: var(--text-2);
+  transition:
+    border-color 0.13s,
+    color 0.13s,
+    background 0.13s,
+    box-shadow 0.13s,
+    transform 0.13s;
+}
+.source-link:hover {
+  border-color: var(--green);
+  color: var(--green);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+.source-link .source-link-ext {
+  color: var(--text-4);
+  transition: color 0.13s;
+}
+.source-link:hover .source-link-ext {
+  color: var(--green);
+}
+/* Light variant for the dark-green hero */
+.source-link--on-dark {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+.source-link--on-dark .source-link-ext {
+  color: rgba(255, 255, 255, 0.8);
+}
+.source-link--on-dark:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #fff;
+}
+.source-link--on-dark:hover .source-link-ext {
+  color: #fff;
+}
+.source-link:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
+.source-link--on-dark:focus-visible {
+  outline: 2px solid #fff;
+}
+
 /* ── Page header strip ────────────────────────────── */
 .main-header {
   display: flex;
@@ -522,6 +587,9 @@ svg {
   justify-content: space-between;
   margin-bottom: 22px;
   gap: 20px;
+}
+.main-header-right {
+  flex-shrink: 0;
 }
 .main-heading {
   font-family: var(--font-display);
@@ -1189,6 +1257,20 @@ svg {
 .site-footer strong {
   color: var(--text-2);
   font-weight: 600;
+}
+.site-footer a {
+  color: var(--green);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.13s;
+}
+.site-footer a:hover {
+  border-bottom-color: var(--green);
+}
+.site-footer a:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
 }
 
 /* ── Accessibility: visible keyboard focus ────────── */
